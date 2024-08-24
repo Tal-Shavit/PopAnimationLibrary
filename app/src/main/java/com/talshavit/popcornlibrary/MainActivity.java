@@ -5,6 +5,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -20,9 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private AppCompatButton confirm_btton;
     private PopAnimationView popcornView;
     private TextInputEditText image_size, duration, interval, count;
-    private AutoCompleteTextView direction, type;
-    private String[] directionOption = {"FALL_FROM_TOP", "BOUNCE_FROM_BOTTOM"};
-
+    private RadioGroup radioGroup1, radioGroup2;
+    private RadioButton from_top, from_bottom, rotate, not_rotate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initViews() {
+        onDirection();
+        onType();
         onConfirmButton();
     }
 
@@ -45,19 +48,8 @@ public class MainActivity extends AppCompatActivity {
                 onCountEditTxt();
                 onDurationEditTxt();
                 onInterval();
-                //initAdapter(direction, directionOption);
-                /*Log.d("lala", "ll2ll");
-                direction.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Log.d("lala", "llll");
-                        direction.showDropDown();
-                    }
-                });*/
 
                 popcornView.setImage(R.drawable.popcorn);
-                popcornView.setAnimationType(AnimationType.FALL_WITH_ROTATION);
-                popcornView.setAnimationDirection(AnimationDirection.BOUNCE_FROM_BOTTOM);
 
                 popcornView.post(new Runnable() {
                     @Override
@@ -69,8 +61,30 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void initAdapters() {
-        initAdapter(direction, directionOption);
+    private void onType() {
+        radioGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int checkedID) {
+                if(checkedID == R.id.not_rotate){
+                    popcornView.setAnimationType(AnimationType.FALL_NO_ROTATION);
+                }else{
+                    popcornView.setAnimationType(AnimationType.FALL_WITH_ROTATION);
+                }
+            }
+        });
+    }
+
+    private void onDirection() {
+        radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int checkedID) {
+                if(checkedID == R.id.from_bottom){
+                    popcornView.setAnimationDirection(AnimationDirection.BOUNCE_FROM_BOTTOM);
+                }else if(checkedID == R.id.from_top){
+                    popcornView.setAnimationDirection(AnimationDirection.FALL_FROM_TOP);
+                }
+            }
+        });
     }
 
     private void onInterval() {
@@ -93,11 +107,6 @@ public class MainActivity extends AppCompatActivity {
         popcornView.setPopcornCount(countTxt);
     }
 
-    private void initAdapter(AutoCompleteTextView autoCompleteTextView, String[] arr) {
-        Log.d("lala", arr.length+"");
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.dropdown_item, arr);
-        autoCompleteTextView.setAdapter(adapter);
-    }
     private void findViews() {
         popcornView = findViewById(R.id.popcorn_view);
         confirm_btton = findViewById(R.id.confirm_btton);
@@ -105,7 +114,11 @@ public class MainActivity extends AppCompatActivity {
         duration = findViewById(R.id.duration);
         interval = findViewById(R.id.interval);
         count = findViewById(R.id.count);
-        direction = findViewById(R.id.direction);
-        type = findViewById(R.id.type);
+        radioGroup1 = findViewById(R.id.radioGroup1);
+        radioGroup2 = findViewById(R.id.radioGroup2);
+        from_top = findViewById(R.id.from_top);
+        from_bottom = findViewById(R.id.from_bottom);
+        rotate = findViewById(R.id.rotate);
+        not_rotate = findViewById(R.id.not_rotate);
     }
 }
