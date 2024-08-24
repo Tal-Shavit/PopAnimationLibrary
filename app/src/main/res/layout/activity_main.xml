@@ -149,7 +149,6 @@
         </LinearLayout>
     </LinearLayout>
 
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/confirm_btton"
         android:layout_width="100dp"

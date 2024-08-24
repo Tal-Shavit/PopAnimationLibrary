@@ -31,16 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
         findViews();
         initViews();
-
-
-//        popcornView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-//            @Override
-//            public void onGlobalLayout() {
-//                popcornView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-//                popcornView.startAnimation();
-//            }
-//        });
-
     }
 
     private void initViews() {
