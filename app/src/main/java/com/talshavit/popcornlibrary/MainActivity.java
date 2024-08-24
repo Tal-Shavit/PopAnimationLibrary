@@ -1,10 +1,7 @@
 package com.talshavit.popcornlibrary;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -15,7 +12,6 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.talshavit.popanimationlibrary.AnimationDirection;
 import com.talshavit.popanimationlibrary.AnimationType;
 import com.talshavit.popanimationlibrary.PopAnimationView;
-
 
 public class MainActivity extends AppCompatActivity {
 

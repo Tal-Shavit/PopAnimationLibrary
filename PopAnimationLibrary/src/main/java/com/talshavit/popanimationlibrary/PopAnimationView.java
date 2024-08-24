@@ -1,6 +1,5 @@
 package com.talshavit.popanimationlibrary;
 
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
