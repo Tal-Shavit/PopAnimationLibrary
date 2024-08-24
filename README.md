@@ -40,31 +40,37 @@ Replace `Tag` with the specific version or commit tag you want to use from the r
 
 ## Usage
  ``` java
-// Initialize the library
+// Initialize the PopAnimationView
 private PopAnimationView popcornView;
 
-// Set the image
+// Set the image resource to be animated
 popcornView.setImage(R.drawable.popcorn);
-// Set the count of images
-popcornView.setPopcornCount(an integer);
-// Set the size of images
-popcornView.setSize(an integer);
-// Set the interval
-popcornView.setInterval(intervalTxt);
-// Set the duration
-popcornView.setDuration(durationTxt);
-// Set the direction
-// top-to-bottom
+
+// Set the number of images in the animation
+popcornView.setPopcornCount(50);
+
+// Set the size of the images
+popcornView.setSize(100);
+
+// Set the interval between each image appearance (in milliseconds)
+popcornView.setInterval(500);
+
+// Set the duration for each image's fall (in milliseconds)
+popcornView.setDuration(2000);
+
+// Set the direction of the animation
+// For images falling from the top
 popcornView.setAnimationDirection(AnimationDirection.FALL_FROM_TOP);
-// bottom-to-top
+// For images bouncing up from the bottom
  popcornView.setAnimationDirection(AnimationDirection.BOUNCE_FROM_BOTTOM);
-// Set the type
-// rotate
+
+// Set the animation type
+// For images rotating while falling
 popcornView.setAnimationType(AnimationType.FALL_WITH_ROTATION);
-// regular
+// For images falling without rotation
  popcornView.setAnimationType(AnimationType.FALL_NO_ROTATION);
 
-// Show the images 
+// Start the animation
 popcornView.post(new Runnable() {
                     @Override
                     public void run() {
