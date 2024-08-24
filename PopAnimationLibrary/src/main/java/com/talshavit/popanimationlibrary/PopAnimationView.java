@@ -15,13 +15,9 @@ import java.util.Random;
 
 public class PopAnimationView extends View {
     private Bitmap popAnimationBitmap;
-    private List<Float> popAnimtionYPositions;
+    private List<Float> popAnimtionYPositions, rotationAngles;
     private List<Integer> startXPositions;
-    private List<Float> rotationAngles;
-    private int count = 10;
-    private int duration = 0;
-    private int interval = 0;
-    private int size = 100;
+    private int count = 10, duration = 0,  interval = 0, size = 100;
     private float startY, endY;
     private AnimationType animationType = AnimationType.FALL_WITH_ROTATION;
     private AnimationDirection animationDirection = AnimationDirection.FALL_FROM_TOP;
@@ -43,7 +39,9 @@ public class PopAnimationView extends View {
         for (int i = 0; i < count; i++) {
             int startX = random.nextInt(getWidth() - popAnimationBitmap.getWidth());
             startXPositions.add(startX);
-            rotationAngles.add(0f);
+            float initialRotationAngle = random.nextFloat() * 360f;
+            rotationAngles.add(initialRotationAngle);
+            //rotationAngles.add(0f);
 
             int startDelay = i * interval;
             int animationDuration = duration + random.nextInt(2000);
@@ -84,10 +82,10 @@ public class PopAnimationView extends View {
 
     private void setStartPosition() {
         if (animationDirection == AnimationDirection.FALL_FROM_TOP) {
-            startY = -popAnimationBitmap.getHeight();
+            startY = -popAnimationBitmap.getHeight() - 400;
             endY = getHeight() + 400;
         } else {
-            startY = getHeight();
+            startY = getHeight() + 400;
             endY = -400;
         }
         popAnimtionYPositions.add(startY);

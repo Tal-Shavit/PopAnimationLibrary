@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
                 popcornView.setImage(R.drawable.popcorn);
                 popcornView.setAnimationType(AnimationType.FALL_WITH_ROTATION);
-                popcornView.setAnimationDirection(AnimationDirection.FALL_FROM_TOP);
+                popcornView.setAnimationDirection(AnimationDirection.BOUNCE_FROM_BOTTOM);
 
                 popcornView.post(new Runnable() {
                     @Override
