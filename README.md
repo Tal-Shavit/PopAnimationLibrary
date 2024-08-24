@@ -33,7 +33,7 @@ dependencyResolutionManagement {
 Add the library dependency to your app module's build.gradle file:
 ``` gradle
 dependencies {
-    implementation 'com.github.Tal-Shavit:yPopAnimationLibraryTag'
+    implementation 'com.github.Tal-Shavit:PopAnimationLibrary:Tag'
 }
 ```
 Replace `Tag` with the specific version or commit tag you want to use from the repository.
