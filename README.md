@@ -1,6 +1,9 @@
 # Pop Animation Library
 The Pop Animation Library is an Android Studio library that allows developers to easily add dynamic pop-up animations to their applications. With this library, images can either fall from the top of the screen or pop up from the bottom, adding an engaging visual element to your app.
 
+## Demonstration Video
+https://github.com/user-attachments/assets/2b25284a-5a7e-445e-9c70-a7b4f98ac6fc
+
 ## Features
 - **Customizable Animation Direction:** Choose whether images will fall from the top of the screen or rise from the bottom.
 - **Adjustable Duration:** Set the minimum duration for each image's appearance, with an additional random value to create natural spacing between them.
@@ -70,8 +73,5 @@ popcornView.post(new Runnable() {
                 });
 ```
 
-## Demonstration Video
-  
-https://github.com/user-attachments/assets/2b25284a-5a7e-445e-9c70-a7b4f98ac6fc
 
 
