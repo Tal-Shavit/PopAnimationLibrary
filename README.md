@@ -1,3 +1,4 @@
+[![](https://www.jitpack.io/v/Tal-Shavit/PopAnimationLibrary.svg)](https://www.jitpack.io/#Tal-Shavit/PopAnimationLibrary)
 # Pop Animation Library
 The Pop Animation Library is an Android Studio library that allows developers to easily add dynamic pop-up animations to their applications. With this library, images can either fall from the top of the screen or pop up from the bottom, adding an engaging visual element to your app.
 
